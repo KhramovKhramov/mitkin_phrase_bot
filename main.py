@@ -18,7 +18,7 @@ def main():
     dp.add_handler(MessageHandler(Filters.regex("^(Пропустить)$"),  learning))
     dp.add_handler(MessageHandler(Filters.regex("Митькин"), get_phrase))
     dp.add_handler(MessageHandler(Filters.regex("митькин"), get_phrase))
-    dp.add_handler(MessageHandler(Filters.regex("гол"), get_phrase))
+    dp.add_handler(MessageHandler(Filters.regex("^(гол)$"), get_phrase))
     dp.add_handler(MessageHandler(Filters.regex("сайт"), get_phrase))
     dp.add_handler(MessageHandler(Filters.regex("степаныч"), get_phrase))
     dp.add_handler(MessageHandler(Filters.regex("Степаныч"), get_phrase))

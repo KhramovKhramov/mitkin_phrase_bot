@@ -1,9 +1,9 @@
 from random import choice
 
 import markovify
-from bot.db import db, add_phrase
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.error import BadRequest
+from db_phrases import add_phrase, get_random_phrase
 
 
 def create_text_model(update, context):
@@ -40,5 +40,6 @@ def learning(update, context):
         update.message.reply_text(edited_new_phrase, reply_markup=get_keyboard())
 
 def get_phrase(update, context):
-    all_phrases = db.phrases_collection.find_one({'level': '1'})
-    return update.message.reply_text(choice(all_phrases['all_phrases']))
+    phrase = get_random_phrase()
+
+    return update.message.reply_text(phrase)

@@ -2,7 +2,7 @@ import logging
 
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 
-import settings
+from bot import settings
 from bot.handlers import get_phrase, greet_user, learning
 
 logging.basicConfig(filename='bot.log', level=logging.INFO)
